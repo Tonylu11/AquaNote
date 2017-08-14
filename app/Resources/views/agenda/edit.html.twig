@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="container">
+    <p></p>
+    <a class="btn azulito" href="{{ path('agenda_index') }}"><i class="material-icons blanco">arrow_back</i></a>
+    <h3 class="epigrafes centrarEpigrafe">Editar Contacto</h3>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input class="btn green right negrita" type="submit" value="Editar" />
+    {{ form_end(edit_form) }}
+
+    {{ form_start(delete_form) }}
+        <input class="left red btn negrita" type="submit" value="Eliminar" />
+    {{ form_end(delete_form) }}
+  </div>
+{% endblock %}

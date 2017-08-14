@@ -1,4 +1,31 @@
-<form class="" action="/register" method="post">
-  {{ form_widget(form) }}
-  <input type="submit" name="register" value="Registrar">
-</form>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+<link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}"/>
+<link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}">
+<body>
+  <header class="header">
+      <img class="logo-icon" src="{{ asset('images/logo.png') }}">
+      <h1 class="logo">Agenda de contactos</h1>
+      <ul class="navi"></ul>
+  </header>
+  <div class="main-content">
+    <div class="container">
+      <p></p>
+      <a class="btn azulito" href="{{ path('login') }}"><i class="material-icons blanco">arrow_back</i></a>
+      <p></p>
+      <h3 class="epigrafes centrarEpigrafe">Registro</h3>
+        <form class="col s6 centrar" action="/register" method="post">
+          {{ form_widget(form) }}
+          <input id="register" class="btn azulito" type="submit" name="register" value="Registrar">
+        </form>
+    </div>
+  </div>
+  <div class="footer">
+      <p class="footer-text">Realizado por <a href="https://www.github.com/TonyLu11">Antonio Luque Bravo</a></p>
+  </div>
+</body>
+
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>

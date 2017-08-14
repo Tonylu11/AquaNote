@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="container">
+    <h3 class="epigrafes centrarEpigrafe">Lista de Contactos</h3>
+
+    <a class="btn green right" href="{{ path('agenda_new') }}"><i class="material-icons blanco">add</i></a>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Telefono</th>
+                <th>Ver</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for agenda in agendas %}
+            <tr>
+                <td>{{ agenda.nombre }}</td>
+                <td>{{ agenda.apellidos }}</td>
+                <td>{{ agenda.telefono }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('agenda_show', { 'id': agenda.id }) }}"><i class="material-icons">remove_red_eye</i></a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  </div>
+{% endblock %}

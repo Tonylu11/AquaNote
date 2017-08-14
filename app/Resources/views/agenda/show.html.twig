@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="container">
+    <p></p>
+    <a class="btn azulito" href="{{ path('agenda_index') }}"><i class="material-icons blanco">arrow_back</i></a>
+
+    <h4 class="epigrafes centrarEpigrafe">Contacto {{agenda.nombre}}</h4>
+
+    <!--<table>
+      <thead>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Telefono</th>
+      </thead>
+        <tbody>
+            <tr>
+                <td>{{ agenda.nombre }}</td>
+                <td>{{ agenda.apellidos }}</td>
+                <td>{{ agenda.telefono }}</td>
+            </tr>
+        </tbody>
+    </table>-->
+
+    {{ form_start(delete_form) }}
+    <input id="eliminar" class="right red btn negrita" type="submit" value="Eliminar">
+    {{ form_end(delete_form) }}
+    <a class="green btn right negrita" href="{{ path('agenda_edit', { 'id': agenda.id }) }}">Editar</a>
+
+    <h5><span class="epigrafes">Nombre:</span> {{ agenda.nombre }}</h5>
+    <h5><span class="epigrafes">Apellidos:</span> {{ agenda.apellidos }}</h5>
+    <h5><span class="epigrafes">Teléfono:</span> {{ agenda.telefono }}</h5>
+  </div>
+{% endblock %}
